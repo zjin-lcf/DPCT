@@ -565,12 +565,13 @@ int main(int argc, char **argv)
     args.DeviceInit();
 
     // Get GPU device bandwidth (GB/s)
-    int device_ordinal, bus_width, mem_clock_khz;
+    //int device_ordinal, bus_width, mem_clock_khz;
     //cudaGetDevice(&device_ordinal);
     //cudaDeviceGetAttribute(&bus_width, cudaDevAttrGlobalMemoryBusWidth, device_ordinal);
     //cudaDeviceGetAttribute(&mem_clock_khz, cudaDevAttrMemoryClockRate, device_ordinal);
     //double bandwidth_GBs = double(bus_width) * mem_clock_khz * 2 / 8 / 1000 / 1000;
-    double bandwidth_GBs = 34;  // hardcoded for Iris 
+    
+    double bandwidth_GBs = 34;  // hardcoded 
 
     // Run test(s)
     uchar4* uchar4_pixels = NULL;
