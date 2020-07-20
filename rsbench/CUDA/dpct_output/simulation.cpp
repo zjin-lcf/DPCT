@@ -171,10 +171,12 @@ void run_event_based_simulation(Input in, SimulationData SD, unsigned long * vha
        });
   });
 
+  stop = get_time();
+  printf("Kernel initialization, compilation, and launch took %.2lf seconds.\n", stop-start);
+  printf("Beginning event based simulation...\n");
+
   q_ct1.memcpy(verification_host, verification_d, sizeof(int) * in.lookups)
       .wait();
-
-  dev_ct1.queues_wait_and_throw();
 
   sycl::free(verification_d, q_ct1);
   sycl::free(mats_d, q_ct1);
@@ -186,9 +188,6 @@ void run_event_based_simulation(Input in, SimulationData SD, unsigned long * vha
   sycl::free(pseudo_K0RS_d, q_ct1);
   sycl::free(windows_d, q_ct1);
 
-                stop = get_time();
-		printf("Kernel initialization, compilation, and launch took %.2lf seconds.\n", stop-start);
-		printf("Beginning event based simulation...\n");
 	}
 
 	// Host reduces the verification array
