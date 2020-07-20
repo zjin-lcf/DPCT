@@ -1,0 +1,32 @@
+[
+    {
+        "command": "nvcc -c  -std=c++14 -O3 -o main.o -D__CUDACC__=1 main.cu",
+        "directory": "/home/cc/CUDA-examples/rsbench",
+        "file": "/home/cc/CUDA-examples/rsbench/main.cu"
+    },
+    {
+        "command": "nvcc -c  -std=c++14 -O3 -o simulation.o -D__CUDACC__=1 simulation.cu",
+        "directory": "/home/cc/CUDA-examples/rsbench",
+        "file": "/home/cc/CUDA-examples/rsbench/simulation.cu"
+    },
+    {
+        "command": "nvcc -c  -std=c++14 -O3 -o io.o -D__CUDACC__=1 io.cu",
+        "directory": "/home/cc/CUDA-examples/rsbench",
+        "file": "/home/cc/CUDA-examples/rsbench/io.cu"
+    },
+    {
+        "command": "nvcc -c  -std=c++14 -O3 -o init.o -D__CUDACC__=1 init.cu",
+        "directory": "/home/cc/CUDA-examples/rsbench",
+        "file": "/home/cc/CUDA-examples/rsbench/init.cu"
+    },
+    {
+        "command": "nvcc -c  -std=c++14 -O3 -o material.o -D__CUDACC__=1 material.cu",
+        "directory": "/home/cc/CUDA-examples/rsbench",
+        "file": "/home/cc/CUDA-examples/rsbench/material.cu"
+    },
+    {
+        "command": "nvcc -c  -std=c++14 -O3 -o utils.o -D__CUDACC__=1 utils.cu",
+        "directory": "/home/cc/CUDA-examples/rsbench",
+        "file": "/home/cc/CUDA-examples/rsbench/utils.cu"
+    }
+]
