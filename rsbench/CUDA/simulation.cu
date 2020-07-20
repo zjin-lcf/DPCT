@@ -163,9 +163,11 @@ void run_event_based_simulation(Input in, SimulationData SD, unsigned long * vha
 			SD.max_num_nucs 
 			);
 
-                cudaMemcpy(verification_host, verification_d, sizeof(int) * in.lookups, cudaMemcpyDeviceToHost);
+		stop = get_time();
+		printf("Kernel initialization, compilation, and launch took %.2lf seconds.\n", stop-start);
+		printf("Beginning event based simulation...\n");
 
-                cudaDeviceSynchronize();
+                cudaMemcpy(verification_host, verification_d, sizeof(int) * in.lookups, cudaMemcpyDeviceToHost);
 
                 cudaFree(verification_d);
                 cudaFree(mats_d);
@@ -177,9 +179,6 @@ void run_event_based_simulation(Input in, SimulationData SD, unsigned long * vha
 		cudaFree(pseudo_K0RS_d);
 		cudaFree(windows_d);
 
-		stop = get_time();
-		printf("Kernel initialization, compilation, and launch took %.2lf seconds.\n", stop-start);
-		printf("Beginning event based simulation...\n");
 	}
 
 	// Host reduces the verification array
